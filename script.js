@@ -107,16 +107,19 @@ colorBtns.forEach(btn => {
     });
 });
 
+
 colorPicker.addEventListener("change", () => {
     // passing picked color value from color picker to last color btn background
     colorPicker.parentElement.style.background = colorPicker.value;
     colorPicker.parentElement.click();
 });
 
+
 clearCanvas.addEventListener("click", () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height); // clearing whole canvas
     setCanvasBackground();
 });
+
 
 saveImg.addEventListener("click", () => {
     const link = document.createElement("a"); // creating <a> element
@@ -124,6 +127,7 @@ saveImg.addEventListener("click", () => {
     link.href = canvas.toDataURL(); // passing canvasData as link href value
     link.click(); // clicking link to download image
 });
+
 
 canvas.addEventListener("mousedown", startDraw);
 canvas.addEventListener("mousemove", drawing);
